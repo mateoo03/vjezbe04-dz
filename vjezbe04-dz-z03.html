@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prosti brojevi od 1 do 1000</title>
+</head>
+<body>
+  <h1>Prosti brojevi od 1 do 1000</h1>
+  <pre id="output"></pre>
+
+  <script>
+    // Funkcija koja provjerava je li broj prost
+    function jeProst(broj) {
+      if (broj <= 1) {
+        return false;
+      }
+      for (var i = 2; i <= Math.sqrt(broj); i++) {
+        if (broj % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    // Ispisivanje prostih brojeva od 1 do 1000 u konzoli i HTML dokumentu
+    function ispisiProsteBrojeve() {
+      var outputElement = document.getElementById("output");
+
+      for (var i = 1; i <= 1000; i++) {
+        if (jeProst(i)) {
+          console.log(i);
+          outputElement.textContent += i + "\n";
+        }
+      }
+    }
+
+    ispisiProsteBrojeve(); // Poziv funkcije za ispisivanje prostih brojeva
+  </script>
+</body>
+</html>

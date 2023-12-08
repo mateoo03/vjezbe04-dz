@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parni brojevi i njihovi kvadrati</title>
+</head>
+<body>
+  <h1>Parni brojevi i njihovi kvadrati</h1>
+  <ul id="output"></ul>
+
+  <script>
+    // Funkcija koja ispisuje parne brojeve i njihove kvadrate u konzoli i HTML dokumentu
+    function ispisiParniIKvadrat() {
+      var outputList = document.getElementById("output");
+
+      for (var i = 1; i <= 100; i++) {
+        if (i % 2 === 0) {
+          var kvadrat = i * i;
+          console.log("Parni broj: " + i + ", Kvadrat: " + kvadrat);
+
+          var listItem = document.createElement("li");
+          listItem.textContent = "Parni broj: " + i + ", Kvadrat: " + kvadrat;
+          outputList.appendChild(listItem);
+        }
+      }
+    }
+
+    ispisiParniIKvadrat(); // Poziv funkcije za ispisivanje parnih brojeva i njihovih kvadrata
+  </script>
+</body>
+</html>
